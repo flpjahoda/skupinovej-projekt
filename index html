@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="html/style.css">
+</head>
+<body class="pod">
+  <div class="min zelenatmava">nazev hry</div>
+      <div class="max vedle">
+        <div class="min"></div>
+        <div class="max zlutatmava">
+         <div class="pod">
+           <div class="vedle">
+             <div class="max zlutatmava">obrazek</div>
+             <div class="max zlutasvetla">popis</div>
+           </div>
+           <div class="vedle">
+             <div class="max zlutasvetla">popis</div>
+             <div class="max zlutatmava">obrazek</div>
+           </div>
+          </div>
+        </div>
+        <div class="min"></div>
+        <div class="min"></div>
+        <div class="min"></div>
+        <div class="min"></div>
+      </div>
+    <div class="min"></div>
+  </div>
+  <script src="html/script.js"></script>
+</body>
