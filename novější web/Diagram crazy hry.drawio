@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Stránka-1" id="QexE9l0f8-k03esEl-nk">
-    <mxGraphModel dx="1414" dy="787" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1414" dy="795" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -45,7 +45,7 @@
             <mxPoint x="485" y="705" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="jkolPgF1Gh6dv1SpLh06-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;stupělá sekira&lt;/div&gt;&lt;div&gt;malá rychlost ale větší poškození&lt;br&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="jkolPgF1Gh6dv1SpLh06-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="stupena sekira malá rychlost ale velkej damige" vertex="1">
           <mxGeometry height="60" width="120" x="420" y="90" as="geometry" />
         </mxCell>
         <mxCell id="jkolPgF1Gh6dv1SpLh06-26" edge="1" parent="1" source="jkolPgF1Gh6dv1SpLh06-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="jkolPgF1Gh6dv1SpLh06-22">
