@@ -105,7 +105,7 @@
         <mxCell id="jkolPgF1Gh6dv1SpLh06-44" edge="1" parent="1" source="jkolPgF1Gh6dv1SpLh06-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="jkolPgF1Gh6dv1SpLh06-43" value="ne">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="jkolPgF1Gh6dv1SpLh06-48" edge="1" parent="1" source="jkolPgF1Gh6dv1SpLh06-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="jkolPgF1Gh6dv1SpLh06-46">
+        <mxCell id="jkolPgF1Gh6dv1SpLh06-48" edge="1" parent="1" source="jkolPgF1Gh6dv1SpLh06-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="jkolPgF1Gh6dv1SpLh06-46" value="ano">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="jkolPgF1Gh6dv1SpLh06-41" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="je hráč ve finálním levelu" vertex="1">
@@ -135,8 +135,12 @@
         <mxCell id="jkolPgF1Gh6dv1SpLh06-51" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="konec hry" vertex="1">
           <mxGeometry height="60" width="120" x="330" y="1020" as="geometry" />
         </mxCell>
-        <mxCell id="jkolPgF1Gh6dv1SpLh06-58" edge="1" parent="1" source="jkolPgF1Gh6dv1SpLh06-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="jkolPgF1Gh6dv1SpLh06-57">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="jkolPgF1Gh6dv1SpLh06-58" edge="1" parent="1" source="jkolPgF1Gh6dv1SpLh06-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="jkolPgF1Gh6dv1SpLh06-57" value="ano">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="540" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="jkolPgF1Gh6dv1SpLh06-54" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="dokončil hráč sudý level ?" vertex="1">
           <mxGeometry height="120" width="130" x="290" y="480" as="geometry" />
@@ -146,6 +150,9 @@
         </mxCell>
         <mxCell id="jkolPgF1Gh6dv1SpLh06-57" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="oběví se secret room kde pokud na začátku vybral nužky tak je použije a díky tomu dostane bonus do dalšího levelu" vertex="1">
           <mxGeometry height="110" width="120" x="370" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="De7n6JoWLc197yNF7pQN-1" edge="1" parent="1" source="jkolPgF1Gh6dv1SpLh06-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.658;entryY=0.9;entryDx=0;entryDy=0;entryPerimeter=0;" target="jkolPgF1Gh6dv1SpLh06-33" value="ne">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
