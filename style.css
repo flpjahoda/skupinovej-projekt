@@ -1,0 +1,802 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  overflow-x:hidden;
+  font-family:'Oswald', sans-serif;
+  background:#111;
+  color:white;
+}
+
+/* ---------- HEADER ---------- */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  padding: 20px 20px 0 20px;
+
+  transform: translateY(-80%); 
+  
+  transition: transform 0.3s ease-in-out 1s;
+  animation: ukazMenu 5s ease-in-out;
+}
+
+.header:hover {
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out 0s;
+}
+
+.header::after {
+  content: "▼";
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+  text-align: center;
+  line-height: 25px;
+
+  position: absolute;
+  left: 50%;
+  top: 100%; 
+  transform: translateX(-50%);
+  
+  width: 40px;
+  height: 20px; 
+  
+  background: rgba(0, 0, 0, 0.6); 
+  backdrop-filter: blur(10px);
+  border-radius: 0 0 10px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: none;
+  
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+.header:hover::after {
+  opacity: 0;
+}
+
+@keyframes ukazMenu {
+  0% { transform: translateY(-80%); }   /* Na startu je schovaná */
+  15% { transform: translateY(0); }       /* Rychle vyjede dolů */
+  75% { transform: translateY(0); }       /* Drží zobrazená, aby si ji člověk všiml */
+  100% { transform: translateY(-80%); }   /* Plynule zajede zpět */
+}
+
+.header-content{
+  width:100%;
+  max-width:1400px;
+
+  margin:auto;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:20px 30px;
+
+  border-radius:20px;
+
+  background:rgba(0,0,0,0.3);
+
+  backdrop-filter:blur(20px);
+}
+
+.header-logo{
+  font-size:2rem;
+}
+
+.nav{
+  display:flex;
+  gap:30px;
+}
+
+.nav a{
+  color:white;
+
+  text-decoration:none;
+
+  font-size:1.1rem;
+}
+
+.theme-button{
+  padding:12px 20px;
+
+  border:none;
+  border-radius:10px;
+
+  cursor:pointer;
+
+  background:white;
+}
+
+/* ---------- GLOBAL ---------- */
+
+.part{
+  width:100%;
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  
+  padding:80px 20px;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+/* ---------- MAIN PAGE ---------- */
+
+.main-page{
+  min-height:100vh;
+
+  background-image:url(obr/main.webp);
+  background-size:cover;
+  background-position:center;
+  
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  
+  text-align:center;
+  
+  padding:40px 20px;
+  
+  height:100vh;
+  overflow:hidden;
+}
+
+.main-page:after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #4dca81;
+  border-image: linear-gradient(to bottom, #72f4ac, #4dca81) 0 100%;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.logo{
+  width:min(700px, 90%);
+  height:auto;
+}
+
+/* ---------- BUTTONS ---------- */
+
+/*.buttons{
+  margin-top:40px;
+}
+
+.small-button{
+  display:flex;
+  gap:20px;
+  margin-bottom:20px;
+}
+
+.button{
+  border-radius:12px;
+
+  background:rgba(255,255,255,0.15);
+
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,0.1);
+  background-image:url(obr/linemap-20.png);
+  background-size:cover;
+}
+
+.xbox,
+.playstation{
+  width:260px;
+  height:180px;
+}
+
+.steam{
+  width:540px;
+  height:120px;
+}*/
+
+/* ---------- CONTAINER & LAYOUT ---------- */
+.buttons { 
+  margin-top: 40px; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  /* Přidáme maximální šířku pro celý blok tlačítek, např. 800px nebo 1000px, 
+     aby se neroztáhla úplně od nevidím do nevidím na obřích monitorech */
+  width: 100%;
+  max-width: 1050px; 
+  padding: 0 20px; /* Jemný odstup od okrajů obrazovky */
+}
+
+.small-button { 
+  display: flex; 
+  gap: 20px; 
+  margin-bottom: 20px; 
+  /* Roztáhne řádek s Xbox a PS přes celou povolenou šířku (850px) */
+  width: 100%; 
+}
+
+/* ---------- ZÁKLADNÍ TLAČÍTKO ---------- */
+.button {
+  position: relative; overflow: hidden; border-radius: 14px; text-decoration: none;
+  display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px;
+  background: rgba(240, 240, 240, 0.5);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,0.1);
+  background-image:url(obr/linemap-20.png);
+  background-size:cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  transition: transform .25s ease, background .25s ease, box-shadow .25s ease, filter .25s ease;
+}
+
+/* Tlačítkové animace (Hover & Active) */
+.button:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 20px 45px rgba(0,0,0,.45); }
+.button:active { transform: translateY(-2px) scale(.99); }
+.button:hover .platform-name, .button:hover .platform-icon { color: white; }
+.button:hover .platform-icon { transform: scale(1.08); }
+
+/* --- NOVÉ NASTAVENÍ VELIKOSTÍ (FLEXIBILNÍ PŘES OBRAZOVKU) --- */
+
+.xbox, .playstation { 
+  /* flex: 1 zařídí, že obě tlačítka budou mít na pixel přesně stejnou šířku 
+     a vyplní přesně polovinu (50%) řádku .small-button */
+  flex: 1; 
+  height: 25vh; 
+}
+
+.steam { 
+  /* Steam je na samostatném řádku, tak vyplní celých 100% dostupné šířky */
+  width: 100%; 
+  height: 15vh; 
+  flex-direction: row; 
+}
+
+/* ---------- IKONY A TEXTY GLOBLÁLNĚ ---------- */
+.platform-icon { font-family: "Font Awesome 6 Brands"; font-size: 5rem; font-style: normal; transition: transform .25s ease, color .25s ease; }
+.platform-name { font-size: 2rem; letter-spacing: 2px; transition: color .25s ease; }
+
+/* Unikátní kódy ikon */
+.xbox-icon::before { content: "\f17c"; }
+.ps-icon::before { content: "\f17a"; }
+.steam-icon::before { content: "\f09b"; }
+
+/* ---------- STYLING JEDNOTLIVÝCH PLATFORM ---------- */
+.xbox .platform-icon, .xbox .platform-name { color: #107c10; }
+.xbox:hover { background: #107c10; }
+
+.playstation .platform-icon, .playstation .platform-name { color: #0039a6; }
+.playstation:hover { background: #0039a6; }
+
+.steam .platform-icon, .steam .platform-name { color: #1b2838; }
+.steam:hover { background: #1b2838; }
+
+/* ---------- RESPONSIVITA (MOBILY) ---------- */
+@media (max-width: 900px) {
+  .small-button { width: 100%; flex-direction: column; align-items: center; }
+  /* Na mobilu zrušíme flex: 1 a nastavíme klasických 90% pro všechny platformy */
+  .xbox, .playstation, .steam { width: 90%; max-width: 500px; height: 140px; } 
+  .platform-name { font-size: 1.5rem; }
+  .platform-icon { font-size: 4rem; }
+  .steam { flex-direction: column; }
+}
+
+/* ---------- TRANSITIONS ---------- */
+
+.no-header{
+  width:100%;
+
+  margin-bottom:-8vw;
+
+  position:relative;
+  z-index:2;
+}
+
+.footer{
+  width:100%;
+
+  margin-top:-10vw;
+
+  position:relative;
+  z-index:2;
+}
+
+/* ---------- BACKGROUNDS ---------- */
+
+.grey.part{
+  background-image:url(obr/light-back.svg);
+}
+
+.red.part{
+  background-image:url(obr/red-back.svg);
+}
+
+.green.part{
+  background-image:url(obr/green-back.svg);
+}
+
+.full{
+  width:100%;
+  height:100vh;
+}
+
+/* ---------- DARK MODE ---------- */
+
+body.dark .grey.part{
+  background-image:url(obr/dark-back.svg);
+}
+
+body.dark .theme-button {
+  background: rgb(17, 17, 17);
+  color: white;
+}
+
+/* ---------- SECTION CONTENT ---------- */
+
+.section-content{
+  width:100%;
+  max-width:1200px;
+
+  margin:auto;
+
+  padding:40px;
+
+  background:rgba(0,0,0,0.25);
+
+  backdrop-filter:blur(8px);
+}
+
+.section-content-dia{
+  width:100%;
+  max-width:1200px;
+  height:1800px;
+
+  margin:auto;
+
+  padding:40px;
+
+  background-image:url(obr/diagram.png);
+  background-size:contain;
+  background-repeat:no-repeat;
+
+  backdrop-filter:blur(8px);
+}
+
+.lower{
+  margin-top:60px;
+}
+
+/* ---------- TEXT ---------- */
+
+.nadpis-1,
+.nadpis-2{
+  font-size:clamp(2rem, 5vw, 4rem);
+
+  text-align:center;
+
+  margin-bottom:30px;
+}
+
+.nadpis-3{
+  font-size:clamp(1rem, 2vw, 2rem);
+
+  text-align:center;
+
+  margin-bottom:30px;
+
+  text-transform:uppercase;
+}
+
+.nadpis-4{
+  font-size:clamp(2rem, 5vw, 4rem);
+
+  text-align:center;
+
+  margin-bottom:0px;
+}
+
+.text-1,
+.text-2{
+  font-size:clamp(1rem, 2vw, 1.6rem);
+
+  line-height:1.7;
+
+  text-align:center;
+
+  margin-bottom:60px;
+}
+
+/* ---------- CONTENT ROW ---------- */
+
+.content-row{
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  gap:40px;
+
+  margin-top:60px;
+}
+
+.content-row.reverse{
+  flex-direction:row-reverse;
+}
+
+/* ---------- CONTENT IMAGE ---------- */
+
+.content-image{
+  width:100%;
+  max-width:450px;
+
+  border-radius:20px;
+}
+
+/* ---------- CONTENT TEXT ---------- */
+
+.content-text{
+  flex:1;
+
+  max-width:500px;
+}
+
+.content-title{
+  font-size:clamp(1.5rem, 3vw, 2.5rem);
+
+  text-transform:uppercase;
+
+  margin-bottom:20px;
+}
+
+.content-description{
+  font-size:clamp(1rem, 2vw, 1.4rem);
+
+  line-height:1.6;
+}
+
+/* ---------- MAPS ---------- */
+
+.red-blocks{
+  width:100%;
+  max-width:1200px;
+
+  margin:80px auto 0 auto;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit, minmax(260px, 1fr));
+
+  gap:30px;
+}
+
+.red-block1{
+  background:rgba(0,0,0,0.25);
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  padding:20px;
+}
+
+.map1{
+  width:100%;
+
+  border-radius:15px;
+
+  margin-bottom:20px;
+}
+
+.b1-nadpis{
+  font-size:2rem;
+
+  margin-bottom:10px;
+
+  /*text-transform:uppercase;*/
+}
+
+.b1-text{
+  font-size:1.2rem;
+
+  line-height:1.5;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width:900px){
+
+  /* HEADER */
+
+  .header-content{
+    flex-direction:column;
+    gap:20px;
+  }
+
+  .nav{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  /* FIXED BACKGROUND OFF */
+
+  .part{
+   /* background-attachment:scroll;*/
+  }
+
+  /* MAIN PAGE */
+
+  .main-page{
+    padding:30px 15px;
+  }
+
+  .logo{
+    width:95%;
+    max-width:500px;
+  }
+
+  /* BUTTONS */
+
+  .buttons{
+    width:100%;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    gap:20px;
+
+    margin-top:30px;
+  }
+
+  .small-button{
+    width:100%;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:0;
+  }
+
+  .xbox,
+  .playstation,
+  .steam{
+    width:90%;
+    max-width:350px;
+
+    height:140px;
+  }
+
+  /* CONTENT */
+
+  .content-row{
+    flex-direction:column;
+
+    text-align:center;
+
+    gap:25px;
+  }
+
+  .content-row.reverse{
+    flex-direction:column;
+    text-align:center;
+    gap:25px;
+  }
+
+  .content-text{
+    max-width:100%;
+  }
+
+  .content-image{
+    max-width:100%;
+  }
+
+  /* TEXT */
+
+  .section-content{
+    padding:25px;
+  }
+
+  .text-1,
+  .text-2{
+    text-align:center;
+
+    padding:0;
+  }
+
+  .content-description{
+    text-align:center;
+  }
+
+  /* MAPS */
+
+  .red-blocks{
+    grid-template-columns:1fr;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+/* ---------- foter ---------- */
+.site-footer {
+  width: 100%;
+  margin-top: -20vh;
+  
+  /* Pozadí tvoří váš kompletní obrázek */
+  background-image: url('obr/footer-mini.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover; 
+
+  padding-top: 300px; 
+  padding-bottom: 60px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.footer-column {
+  flex: 1;
+}
+
+.footer-column h3, 
+.footer-column h4 {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  color: #d1a153; 
+}
+
+.footer-column h4 {
+  color: #ffffff;
+}
+
+/* Texty a popisy */
+.footer-about {
+  color: #a0a0a0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#footer-contacts {
+  margin-top: 20px;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #a0a0a0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.social-icon {
+  color: #ffffff;
+  background: #1c1c1c;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+  background: #d1a153;
+  color: #000000;
+}
+
+.footer-copy {
+  color: #555555;
+  font-size: 0.85rem;
+  margin-top: 15px;
+}
+
+.footer-row {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  }
+
+/* ---------- RESPONSIVITA PRO MOBILY A POMĚR STRAN ---------- */
+@media (max-width: 768px) or (orientation: portrait) {
+  
+  .site-footer {
+    padding-top: 250px; 
+    padding-bottom: 40px;
+    
+   
+    background-position: top center;
+    background-size: cover;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    gap: 40px;
+    padding: 0 30px;
+  }
+
+  .footer-column {
+    width: 100%;
+    max-width: 450px;
+  }
+
+  .footer-about {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .footer-links {
+    display: inline-block;
+    text-align: center;
+  }
+
+  .footer-socials {
+    justify-content: center;
+    margin: 0 auto 15px auto;
+  }
+}
